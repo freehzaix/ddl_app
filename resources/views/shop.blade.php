@@ -8,7 +8,7 @@
     
     <h1>Boutique</h1>
 
-    
+    <x-menu />
 
 </body>
 </html>

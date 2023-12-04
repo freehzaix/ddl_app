@@ -14,4 +14,12 @@ class PagesController extends Controller
         return view('home', ['user' => $user]); 
     }
 
+    public function shop(){
+        return view ('shop');
+    }
+
+    public function contact(){
+        return view('contact');
+    }
+
 }

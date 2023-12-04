@@ -10,6 +10,11 @@
     
     <h1>Page d'accueil</h1>
 
+    <p>
+        Bonjour {{ $user->name }}.
+    </p>
+    
+    <x-menu />
 
 </body>
 </html>
