@@ -10,9 +10,11 @@
     
     <h1>Page d'accueil</h1>
 
-    <p>
-        Bonjour {{ $user->name }}.
-    </p>
+    <ul>
+       @foreach ($classes as $item)
+           <li>{{ $item->libelle }}</li>
+       @endforeach
+    </ul>
     
     <x-menu />
 
