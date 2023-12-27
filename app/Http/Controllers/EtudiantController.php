@@ -7,12 +7,12 @@ use Illuminate\Http\Request;
 
 class EtudiantController extends Controller
 {
-    //Liste des étudiants
-    function index(){
+    //Afficher tous les étudiants
+    public function index(){
         $etudiants = Etudiant::all();
 
         return view('etudiant.index', [
-            'etudiants' => $etudiants
+            'etudiants' => $etudiants,
         ]);
     }
 }

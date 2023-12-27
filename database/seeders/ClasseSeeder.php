@@ -13,9 +13,17 @@ class ClasseSeeder extends Seeder
      */
     public function run(): void
     {
-        //$classe = new Classe();
-        //$classe->libelle = "Licence 2";
-        //$classe->save();
+        $classe = new Classe();
+        $classe->libelle = "Licence 1";
+        $classe->save();
 
+        $classe2 = new Classe();
+        $classe2->libelle = "Licence 2";
+        $classe2->save();
+
+        $classe3 = new Classe();
+        $classe3->libelle = "Licence 3";
+        $classe3->save();
+        
     }
 }
