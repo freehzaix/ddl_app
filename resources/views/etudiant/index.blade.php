@@ -13,7 +13,7 @@
                 <h1>CRUD Etudiant en Laravel</h1>
             </div>
             <div class="col mt-2">
-                <a href="#" class="btn btn-primary">Ajouter un étudiant</a>
+                <a href="{{ route('etudiant.add') }}" class="btn btn-primary">Ajouter un étudiant</a>
             </div>
         </div>
         <div class="row mt-3">
@@ -30,36 +30,19 @@
                       </tr>
                     </thead>
                     <tbody>
-                      <tr>
-                        <th scope="row">1</th>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                        <td>Licence 1</td>
-                        <td>
-                            <a href="#" class="btn btn-primary">Modifier</a>
-                            <a href="#" class="btn btn-danger">Supprimer</a>
-                        </td>
-                      </tr>
-                      <tr>
-                        <th scope="row">2</th>
-                        <td>Jacob</td>
-                        <td>Thornton</td>
-                        <td>Licence 2</td>
-                        <td>
-                            <a href="#" class="btn btn-primary">Modifier</a>
-                            <a href="#" class="btn btn-danger">Supprimer</a>
-                        </td>
-                      </tr>
-                      <tr>
-                        <th scope="row">3</th>
-                        <td>Larry</td>
-                        <td>Bird</td>
-                        <td>Licence 3</td>
-                        <td>
-                            <a href="#" class="btn btn-primary">Modifier</a>
-                            <a href="#" class="btn btn-danger">Supprimer</a>
-                        </td>
-                      </tr>
+                      @foreach ($etudiants as $item)
+                        <tr>
+                          <th scope="row">{{ $item->id }}</th>
+                          <td>{{ $item->nom }}</td>
+                          <td>{{ $item->prenom }}</td>
+                          <td>{{ $item->classe->libelle }}</td>
+                          <td>
+                              <a href="{{ route('etudiant.show', $item->id) }}" class="btn btn-primary">Modifier</a>
+                              <a href="#" class="btn btn-danger">Supprimer</a>
+                          </td>
+                        </tr>
+                      @endforeach
+                      
                     </tbody>
                   </table>
             </div>
