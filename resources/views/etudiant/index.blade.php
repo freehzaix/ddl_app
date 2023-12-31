@@ -19,6 +19,9 @@
         <div class="row mt-3">
             <div class="col">
                 <h3>Liste des étudiants</h3>
+                @if (session('status'))
+                  <div class="alert alert-danger">{{ session('status') }}</div>
+                @endif
                 <table class="table">
                     <thead>
                       <tr>
@@ -38,7 +41,7 @@
                           <td>{{ $item->classe->libelle }}</td>
                           <td>
                               <a href="{{ route('etudiant.show', $item->id) }}" class="btn btn-primary">Modifier</a>
-                              <a href="#" class="btn btn-danger">Supprimer</a>
+                              <a href="{{ route('etudiant.delete', $item->id) }}" class="btn btn-danger">Supprimer</a>
                           </td>
                         </tr>
                       @endforeach

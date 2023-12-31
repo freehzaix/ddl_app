@@ -72,4 +72,12 @@ class EtudiantController extends Controller
 
     }
 
+    //Supprimer un étudiant
+    public function delete($id){
+        $etudiant = Etudiant::find($id);
+        $etudiant->delete();
+
+        return back()->with('status', 'L\'étudiant a bien été enregistré.');
+    }
+
 }
